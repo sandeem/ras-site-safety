@@ -1,0 +1,56 @@
+%% RAS Site Safety - entity relationship diagram (Mermaid source).
+%% Render with: npx -y @mermaid-js/mermaid-cli -i docs/erd.mmd -o docs/erd.png
+%% or paste into https://mermaid.live
+
+erDiagram
+    auth_users ||--|| profiles : "signup creates one profile"
+    profiles ||--o{ submissions : "framer_id"
+    sites ||--o{ submissions : "site_id"
+    submissions ||--o{ submission_photos : "submission_id"
+
+    auth_users {
+        uuid id PK
+    }
+
+    profiles {
+        uuid id PK "references auth.users"
+        text full_name
+        text role "framer or admin"
+        timestamptz created_at
+    }
+
+    sites {
+        uuid id PK
+        text name "unique"
+        text address
+        boolean is_active
+        timestamptz created_at
+    }
+
+    submissions {
+        uuid id PK
+        uuid framer_id FK "references profiles"
+        uuid site_id FK "references sites"
+        date work_date
+        boolean ppe_hard_hat
+        boolean ppe_hi_vis_vest
+        boolean ppe_safety_boots
+        boolean ppe_eye_protection
+        boolean fall_protection_in_place
+        boolean ladders_scaffolding_inspected
+        boolean tools_cords_good_condition
+        boolean hazards_identified
+        text notes "nullable"
+        text status "generated: complete or flagged"
+        timestamptz created_at
+    }
+
+    submission_photos {
+        uuid id PK
+        uuid submission_id FK "references submissions"
+        text storage_path "unique, path in the safety-photos bucket"
+        text file_name
+        text mime_type "jpeg, png or webp"
+        integer size_bytes "max 10 MB"
+        timestamptz created_at
+    }

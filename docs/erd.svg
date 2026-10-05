@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 580" width="1140" height="580" font-family="Segoe UI, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <rect width="1140" height="580" fill="#ffffff"/>
+
+  <text x="40" y="38" font-size="20" font-weight="700" fill="#0d553a">RAS Site Safety &#8212; Database Schema</text>
+  <text x="40" y="58" font-size="12" fill="#5b6b63">PostgreSQL / Supabase &#183; Row Level Security on every table &#183; one form per framer, per site, per day</text>
+
+  <!-- ===================== auth.users ===================== -->
+  <rect x="40" y="82" width="230" height="58" fill="#ffffff" stroke="#c3cfd8"/>
+  <rect x="40" y="82" width="230" height="26" fill="#475569"/>
+  <text x="52" y="100" font-size="13" font-weight="700" fill="#ffffff">auth.users</text>
+  <text x="242" y="100" font-size="9" fill="#cbd5e1" text-anchor="end">Supabase Auth</text>
+  <text x="52" y="128" font-size="12" font-weight="600" fill="#1f2d27">id</text>
+  <text x="86" y="128" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="258" y="128" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">PK</text>
+
+  <!-- ===================== profiles ===================== -->
+  <rect x="40" y="178" width="230" height="122" fill="#ffffff" stroke="#cfe0d7"/>
+  <rect x="40" y="178" width="230" height="26" fill="#0d553a"/>
+  <text x="52" y="196" font-size="13" font-weight="700" fill="#ffffff">profiles</text>
+  <text x="52" y="220" font-size="12" font-weight="600" fill="#1f2d27">id</text>
+  <text x="160" y="220" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="258" y="220" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">PK, FK</text>
+  <text x="52" y="244" font-size="12" font-weight="600" fill="#1f2d27">full_name</text>
+  <text x="160" y="244" font-size="11" fill="#7b8b83">text</text>
+  <text x="52" y="268" font-size="12" font-weight="600" fill="#1f2d27">role</text>
+  <text x="160" y="268" font-size="11" fill="#7b8b83">text</text>
+  <text x="258" y="268" font-size="10" fill="#0d553a" text-anchor="end">framer | admin</text>
+  <text x="52" y="292" font-size="12" font-weight="600" fill="#1f2d27">created_at</text>
+  <text x="160" y="292" font-size="11" fill="#7b8b83">timestamptz</text>
+
+  <!-- ===================== sites ===================== -->
+  <rect x="40" y="340" width="230" height="146" fill="#ffffff" stroke="#cfe0d7"/>
+  <rect x="40" y="340" width="230" height="26" fill="#0d553a"/>
+  <text x="52" y="358" font-size="13" font-weight="700" fill="#ffffff">sites</text>
+  <text x="52" y="382" font-size="12" font-weight="600" fill="#1f2d27">id</text>
+  <text x="160" y="382" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="258" y="382" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">PK</text>
+  <text x="52" y="406" font-size="12" font-weight="600" fill="#1f2d27">name</text>
+  <text x="160" y="406" font-size="11" fill="#7b8b83">text</text>
+  <text x="258" y="406" font-size="10" fill="#0d553a" text-anchor="end">UNIQUE</text>
+  <text x="52" y="430" font-size="12" font-weight="600" fill="#1f2d27">address</text>
+  <text x="160" y="430" font-size="11" fill="#7b8b83">text</text>
+  <text x="52" y="454" font-size="12" font-weight="600" fill="#1f2d27">is_active</text>
+  <text x="160" y="454" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="52" y="478" font-size="12" font-weight="600" fill="#1f2d27">created_at</text>
+  <text x="160" y="478" font-size="11" fill="#7b8b83">timestamptz</text>
+
+  <!-- ===================== submissions ===================== -->
+  <rect x="430" y="82" width="310" height="386" fill="#ffffff" stroke="#cfe0d7"/>
+  <rect x="430" y="82" width="310" height="26" fill="#0d553a"/>
+  <text x="442" y="100" font-size="13" font-weight="700" fill="#ffffff">submissions</text>
+  <!-- spacer -->
+  <text x="442" y="124" font-size="12" font-weight="600" fill="#1f2d27">id</text>
+  <text x="620" y="124" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="728" y="124" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">PK</text>
+  <text x="442" y="148" font-size="12" font-weight="600" fill="#1f2d27">framer_id</text>
+  <text x="620" y="148" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="728" y="148" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">FK &#8594; profiles</text>
+  <text x="442" y="172" font-size="12" font-weight="600" fill="#1f2d27">site_id</text>
+  <text x="620" y="172" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="728" y="172" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">FK &#8594; sites</text>
+  <text x="442" y="196" font-size="12" font-weight="600" fill="#1f2d27">work_date</text>
+  <text x="620" y="196" font-size="11" fill="#7b8b83">date</text>
+  <text x="442" y="220" font-size="12" fill="#1f2d27">ppe_hard_hat</text>
+  <text x="620" y="220" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="244" font-size="12" fill="#1f2d27">ppe_hi_vis_vest</text>
+  <text x="620" y="244" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="268" font-size="12" fill="#1f2d27">ppe_safety_boots</text>
+  <text x="620" y="268" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="292" font-size="12" fill="#1f2d27">ppe_eye_protection</text>
+  <text x="620" y="292" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="316" font-size="12" fill="#1f2d27">fall_protection_in_place</text>
+  <text x="620" y="316" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="340" font-size="12" fill="#1f2d27">ladders_scaffolding_inspected</text>
+  <text x="620" y="340" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="364" font-size="12" fill="#1f2d27">tools_cords_good_condition</text>
+  <text x="620" y="364" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="388" font-size="12" fill="#1f2d27">hazards_identified</text>
+  <text x="620" y="388" font-size="11" fill="#7b8b83">boolean</text>
+  <text x="442" y="412" font-size="12" fill="#1f2d27">notes</text>
+  <text x="620" y="412" font-size="11" fill="#7b8b83">text</text>
+  <text x="728" y="412" font-size="10" fill="#7b8b83" text-anchor="end">nullable</text>
+  <text x="442" y="436" font-size="12" font-weight="600" fill="#1f2d27">status</text>
+  <text x="620" y="436" font-size="11" fill="#7b8b83">text</text>
+  <text x="728" y="436" font-size="10" font-weight="700" fill="#b45309" text-anchor="end">GENERATED</text>
+  <text x="442" y="460" font-size="12" font-weight="600" fill="#1f2d27">created_at</text>
+  <text x="620" y="460" font-size="11" fill="#7b8b83">timestamptz</text>
+  <text x="442" y="490" font-size="10" fill="#0d553a">UNIQUE (framer_id, site_id, work_date)</text>
+
+  <!-- ===================== submission_photos ===================== -->
+  <rect x="830" y="82" width="270" height="194" fill="#ffffff" stroke="#cfe0d7"/>
+  <rect x="830" y="82" width="270" height="26" fill="#0d553a"/>
+  <text x="842" y="100" font-size="13" font-weight="700" fill="#ffffff">submission_photos</text>
+  <text x="842" y="124" font-size="12" font-weight="600" fill="#1f2d27">id</text>
+  <text x="930" y="124" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="1088" y="124" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">PK</text>
+  <text x="842" y="148" font-size="12" font-weight="600" fill="#1f2d27">submission_id</text>
+  <text x="930" y="148" font-size="11" fill="#7b8b83">uuid</text>
+  <text x="1088" y="148" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">FK</text>
+  <text x="842" y="172" font-size="12" font-weight="600" fill="#1f2d27">storage_path</text>
+  <text x="930" y="172" font-size="11" fill="#7b8b83">text</text>
+  <text x="1088" y="172" font-size="10" font-weight="700" fill="#0d553a" text-anchor="end">UNIQUE</text>
+  <text x="842" y="196" font-size="12" font-weight="600" fill="#1f2d27">file_name</text>
+  <text x="930" y="196" font-size="11" fill="#7b8b83">text</text>
+  <text x="842" y="220" font-size="12" font-weight="600" fill="#1f2d27">mime_type</text>
+  <text x="930" y="220" font-size="11" fill="#7b8b83">text</text>
+  <text x="1088" y="220" font-size="10" fill="#0d553a" text-anchor="end">jpeg | png | webp</text>
+  <text x="842" y="244" font-size="12" font-weight="600" fill="#1f2d27">size_bytes</text>
+  <text x="930" y="244" font-size="11" fill="#7b8b83">integer</text>
+  <text x="1088" y="244" font-size="10" fill="#0d553a" text-anchor="end">&#8804; 10 MB</text>
+  <text x="842" y="268" font-size="12" font-weight="600" fill="#1f2d27">created_at</text>
+  <text x="930" y="268" font-size="11" fill="#7b8b83">timestamptz</text>
+
+  <!-- ===================== relationships ===================== -->
+  <g stroke="#0d553a" stroke-width="1.5" fill="none">
+    <path d="M155 140 V178"/>
+    <path d="M147 140 H163"/>
+    <path d="M147 178 H163"/>
+
+    <path d="M270 216 H350 V144 H430"/>
+    <path d="M286 210 V222"/>
+    <path d="M430 144 L414 136 M430 144 L414 144 M430 144 L414 152"/>
+
+    <path d="M270 378 H350 V168 H430"/>
+    <path d="M286 372 V384"/>
+    <path d="M430 168 L414 160 M430 168 L414 168 M430 168 L414 176"/>
+
+    <path d="M740 120 H830"/>
+    <path d="M756 114 V126"/>
+    <path d="M830 120 L814 112 M830 120 L814 120 M830 120 L814 128"/>
+  </g>
+
+  <text x="170" y="163" font-size="11" fill="#5b6b63">1 : 1</text>
+  <text x="296" y="210" font-size="11" font-weight="600" fill="#0d553a">framer_id</text>
+  <text x="292" y="234" font-size="11" fill="#5b6b63">1</text>
+  <text x="312" y="372" font-size="11" font-weight="600" fill="#0d553a">site_id</text>
+  <text x="292" y="396" font-size="11" fill="#5b6b63">1</text>
+  <text x="746" y="114" font-size="10" font-weight="600" fill="#0d553a">submission_id</text>
+  <text x="744" y="138" font-size="11" fill="#5b6b63">1</text>
+
+  <!-- ===================== legend ===================== -->
+  <line x1="40" y1="516" x2="1100" y2="516" stroke="#e2ebe6"/>
+  <text x="40" y="540" font-size="11" fill="#5b6b63"><tspan font-weight="700" fill="#0d553a">PK</tspan> primary key &#183; <tspan font-weight="700" fill="#0d553a">FK</tspan> foreign key &#183; <tspan font-weight="700" fill="#0d553a">UNIQUE</tspan> unique constraint &#183; crow's foot = many &#183; <tspan font-weight="700" fill="#b45309">GENERATED</tspan> computed by the database</text>
+  <text x="40" y="558" font-size="11" fill="#5b6b63">Photo files live in the private Storage bucket <tspan font-weight="600" fill="#1f2d27">safety-photos</tspan> at <tspan font-weight="600" fill="#1f2d27">{user_id}/{submission_id}/{file}</tspan> &#183; <tspan font-weight="600" fill="#1f2d27">status</tspan> = 'complete' only when all eight answers are &#8220;yes&#8221;, otherwise 'flagged'.</text>
+</svg>

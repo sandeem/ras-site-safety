@@ -6,7 +6,7 @@ the site they are on (with photos); an administrator reviews who submitted what,
 Built with React, Vite and Supabase. Access control is enforced in the database with PostgreSQL
 **Row Level Security**, not only in the UI.
 
-- **Live app:** _add the deployed URL here_ (see [Deploying](#deploying))
+- **Live app:** [https://ras-site-safety.vercel.app/login](https://ras-site-safety.vercel.app/login) (see [Deploying](#deploying))
 - **Entity-Relationship Diagram:** [`docs/erd.svg`](docs/erd.svg)
 
 ---

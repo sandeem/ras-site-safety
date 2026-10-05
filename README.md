@@ -11,15 +11,11 @@ Built with React, Vite and Supabase. Access control is enforced in the database 
 
 ---
 
-## Test credentials
+## Demo accounts
 
-| Role   | Email                      | Password        |
-| ------ | -------------------------- | --------------- |
-| Admin  | `admin@example.com`        | `RasAdmin2026!` |
-| Framer | `jordan.framer@example.com`| `RasFramer2026!`|
-
-Three more framer accounts (`sam.framer@`, `alex.framer@`, `taylor.framer@`) use the same framer
-password. These accounts come from the seed script — see [Local setup](#local-setup).
+The seed script creates the demo logins — one admin and four framers — and prints their usernames and
+passwords when it finishes. They are not listed here; the credentials are provided separately to the
+reviewer. See [Local setup](#local-setup) to create them.
 
 ---
 
@@ -134,7 +130,7 @@ each user the way Supabase does and asserts what that user can and cannot see or
    npm run dev     # http://localhost:5173
    ```
 
-   Log in with the [test credentials](#test-credentials) above.
+   Log in with a demo account (the seed script prints the usernames and passwords — see [Demo accounts](#demo-accounts)).
 
 ---
 
